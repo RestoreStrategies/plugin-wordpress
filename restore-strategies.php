@@ -1,35 +1,74 @@
 <?php
-/*
- * Plugin Name: Restore Strategies
- * Plugin URI: https://github.com/RestoreStrategies/plugin-wordpress
- * Description: The official WordPress plugin for the Restore Strategies API
- * Version: 0.0.0
- * Author: Restore Strategies
- * Author URI: http://www.restorestrategies.org/
- * License: MIT
- * License URI: https://github.com/RestoreStrategies/plugin-wordpress/blob/master/LICENSE
- */ 
 
-/*
-The MIT License (MIT)
+/**
+ * The plugin bootstrap file
+ *
+ * This file is read by WordPress to generate the plugin information in the plugin
+ * admin area. This file also includes all of the dependencies used by the plugin,
+ * registers the activation and deactivation functions, and defines a function
+ * that starts the plugin.
+ *
+ * @link              http://www.restorestrategies.org/
+ * @since             1.0.0
+ * @package           Restore_Strategies
+ *
+ * @wordpress-plugin
+ * Plugin Name:       Restore Strategies
+ * Plugin URI:        https://github.com/RestoreStrategies/plugin-wordpress
+ * Description:       The WordPress plugin for the Restore Strategies API.
+ * Version:           1.0.0
+ * Author:            Restore Strategies
+ * Author URI:        http://www.restorestrategies.org/
+ * License:           MIT
+ * Text Domain:       restore-strategies
+ * Domain Path:       /languages
+ */
 
-Copyright (c) 2016 The For the City Network
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+/**
+ * The code that runs during plugin activation.
+ * This action is documented in includes/class-restore-strategies-activator.php
+ */
+function activate_restore_strategies() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-restore-strategies-activator.php';
+	Restore_Strategies_Activator::activate();
+}
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+/**
+ * The code that runs during plugin deactivation.
+ * This action is documented in includes/class-restore-strategies-deactivator.php
+ */
+function deactivate_restore_strategies() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-restore-strategies-deactivator.php';
+	Restore_Strategies_Deactivator::deactivate();
+}
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
- */ 
+register_activation_hook( __FILE__, 'activate_restore_strategies' );
+register_deactivation_hook( __FILE__, 'deactivate_restore_strategies' );
+
+/**
+ * The core plugin class that is used to define internationalization,
+ * admin-specific hooks, and public-facing site hooks.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-restore-strategies.php';
+
+/**
+ * Begins execution of the plugin.
+ *
+ * Since everything within the plugin is registered via hooks,
+ * then kicking off the plugin from this point in the file does
+ * not affect the page life cycle.
+ *
+ * @since    1.0.0
+ */
+function run_restore_strategies() {
+
+	$plugin = new Restore_Strategies();
+	$plugin->run();
+
+}
+run_restore_strategies();
