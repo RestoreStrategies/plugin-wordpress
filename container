@@ -104,8 +104,8 @@ fi
 
 # -t
 # Run tests.
-if [ "$1" = "-t" ]; then
-fi
+#if [ "$1" = "-t" ]; then
+#fi
 
 # --interactive
 # Run interactive container
