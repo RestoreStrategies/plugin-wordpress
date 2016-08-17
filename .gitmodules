@@ -1,0 +1,3 @@
+[submodule "includes/api-client-php"]
+	path = includes/api-client-php
+	url = https://github.com/RestoreStrategies/api-client-php.git
