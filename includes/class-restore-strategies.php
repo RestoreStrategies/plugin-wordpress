@@ -119,6 +119,8 @@ class Restore_Strategies {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-restore-strategies-public.php';
 
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api-client-php/client.php';
+    
 		$this->loader = new Restore_Strategies_Loader();
 
 	}
@@ -178,6 +180,7 @@ class Restore_Strategies {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+        add_shortcode( 'restore-strategies-opportunity', array( $plugin_public, 'opportunity_shortcode') );
 
 	}
 

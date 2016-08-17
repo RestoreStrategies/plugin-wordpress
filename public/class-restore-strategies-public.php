@@ -40,6 +40,8 @@ class Restore_Strategies_Public {
 	 */
 	private $version;
 
+    private $client;
+
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -52,6 +54,13 @@ class Restore_Strategies_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+
+        $options = get_option($this->plugin_name);
+
+        $this->client = new RestoreStrategiesClient(
+            $options['token'],
+            $options['secret']
+        );
 	}
 
 	/**
@@ -100,4 +109,12 @@ class Restore_Strategies_Public {
 
 	}
 
+
+
+
+    public function opportunity_shortcode($atts) {
+        $response = $this->client->getOpportunity($atts['id']);
+        $html = '<div><h2>Opporuntiy</h2><p>name ' . $response->items()[0]->name . ' </div>';
+        return $html;
+    }
 }
