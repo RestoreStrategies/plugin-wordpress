@@ -181,7 +181,8 @@ class Restore_Strategies {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
         add_shortcode( 'restore-strategies-opportunity', array( $plugin_public, 'opportunity_shortcode') );
-
+        add_shortcode( 'restore-strategies-search', array( $plugin_public, 'search_shortcode') );
+        add_shortcode( 'restore-strategies-search-box', array( $plugin_public, 'search_box_shortcode') );
 	}
 
 	/**

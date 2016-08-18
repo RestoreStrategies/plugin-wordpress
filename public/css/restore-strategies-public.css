@@ -2,3 +2,46 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
+article.restore-strategies-opp {
+        float: left;
+        margin: 0 1em 1em 0;
+        padding: 1em;
+        width: 45%;
+        background: whitesmoke;
+}
+
+article.restore-strategies-opp h3 {
+        margin: 0.25em 0;
+}
+
+article.restore-strategies-opp div {
+        float: left;
+        margin-bottom: 1em;
+}
+
+article.restore-strategies-opp div.details {
+        border-top: 1px solid;
+}
+
+article.restore-strategies-opp div.details div {
+        width: 100%;
+        margin: 0.25em;
+}
+
+article.restore-strategies-opp dt {
+        margin-right: 0.25em;
+}
+
+article.restore-strategies-opp dt, article.restore-strategies-opp dd {
+        margin-bottom: 0.25em;
+        display: inline;
+}
+
+section.restore-strategies-search-box {
+        margin-bottom: 1em;
+}
+
+section.restore-strategies-search-box input {
+        width: 60%;
+}
