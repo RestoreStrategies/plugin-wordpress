@@ -115,11 +115,19 @@ class Restore_Strategies_Public {
         return $response->items()[0];
     }
 
-    private function search($atts) {
+    private function search($atts, $prefix) {
         $keys = array_keys($atts);
 
         for ($i = 0; $i < count($keys); $i++) {
             $atts[$keys[$i]] = explode(',', $atts[$keys[$i]]);
+        }
+
+        if (!empty($atts['q'])) {
+            $atts['q'] = $atts['q'][0];
+        }
+
+        if (!empty($prefix)) {
+            $atts['q'] = $prefix . ' ' . $atts['q'];
         }
 
         $response = $this->client->search($atts);
@@ -140,51 +148,10 @@ class Restore_Strategies_Public {
     }
 
     private function opportunity_html($opp) {
-        $html = '<article class="restore-strategies-opp">
-                    <b class="organization">' . $opp->organization . '</b>
-                    <h3>' . $opp->name . '</h3>
-                    <div class="description">' . $opp->description . '</div>
-                    <div class="details">
-                        <dl>' . self::opportunity_details($opp) . '</dl>
-                    </div>
-                    <div class="links"><a href="#">Signup</a></div>
-                </article>';
-
-        return $html;
+        include('partials/restore-strategies-opportunity.php');
     }
 
-    private function opportunity_details($opp) {
-        $html = '';
-
-        if (!empty($opp->days)) {
-            $html .= '<div><dt>Days:</dt><dd>' . implode(', ', $opp->days) .
-                    "</dd></div>\n";
-        }
-        if (!empty($opp->times)) {
-            $html .= '<div><dt>Times:</dt><dd>' . implode(', ', $opp->times) .
-                    "</dd></div>\n";
-        }
-        if (!empty($opp->issues)) {
-            $html .= '<div><dt>Issues:</dt><dd>' . implode(', ', $opp->issues) .
-                    "</dd></div>\n";
-        }
-        if (!empty($opp->regions)) {
-            $html .= '<div><dt>Regions:</dt><dd>' .
-                    implode(', ', $opp->regions) . "</dd></div>\n";
-        }
-        if (!empty($opp->municipalities)) {
-            $html .= '<div><dt>Municipalities:</dt><dd>' . 
-                    implode(', ', $opp->municipalities) . "</dd></div>\n";
-        }
-        if (!empty($opp->group_types)) {
-            $html .= '<div><dt>Group types:</dt><dd>' .
-                    implode(', ', $opp->group_types) . "</dd></div>\n";
-        }
-
-        return $html;
-    }
-
-    private function search_results_html() {
+    private function search_results_html($prefix) {
         unset($_GET['page_id']);
         unset($_GET['id']);
 
@@ -192,7 +159,7 @@ class Restore_Strategies_Public {
             return '';
         }
 
-        return self::search($_GET);
+        return self::search($_GET, $prefix);
     }
 
     public function opportunity_shortcode($atts) {
@@ -201,26 +168,15 @@ class Restore_Strategies_Public {
     }
 
     public function search_shortcode($atts) {
-        return self::search($atts);
+        return self::search($atts, null);
     }
 
-    public function search_box_shortcode() {
+    public function search_box_shortcode($atts) {
+        $prefix = null;
 
-        $html = '
-            <section class="restore-strategies-search-box">
-                <form method="get" action="' . $_SERVER['REQUEST_URI'] . '">
-                    <input
-                        type="text"
-                        name="q"
-                        placeholder="&nbsp;&nbsp;search opportunities"
-                        value="' . (!empty($_GET['q']) ? $_GET['q'] : '') . '"
-                    />
-                    <button type="submit">Search</button>
-                </form>
-            </section>';
-
-        $html .= self::search_results_html();
-
-        return $html;
+        if (!empty($atts['prefix'])) {
+            $prefix = $atts['prefix'];
+        }
+        include('partials/restore-strategies-search-box.php');
     }
 }
