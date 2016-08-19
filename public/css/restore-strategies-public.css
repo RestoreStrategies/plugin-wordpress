@@ -45,3 +45,18 @@ section.restore-strategies-search-box {
 section.restore-strategies-search-box input {
         width: 60%;
 }
+
+section.restore-strategies-signup {
+        float: left;
+}
+
+section.restore-strategies-signup input[type="text"], section.restore-strategies-signup span {
+        width: 45%;
+        float: left;
+        margin: 0 5% 1em 0;
+}
+
+section.restore-strategies-signup textarea {
+        width: 95%;
+        margin-bottom: 1em;
+}

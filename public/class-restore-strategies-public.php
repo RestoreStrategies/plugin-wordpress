@@ -162,6 +162,23 @@ class Restore_Strategies_Public {
         return self::search($_GET, $prefix);
     }
 
+    public function validate_signup($data) {
+        $valid = !empty($data['givenName']) &&
+                strlen($data['givenName']) > 0 &&
+                is_string($data['givenName']) &&
+                !empty($data['familyName']) &&
+                strlen($data['familyName']) > 0 &&
+                is_string($data['familyName']) &&
+                !empty($data['email']) &&
+                strlen($data['email']) > 5 &&
+                is_string($data['email']) &&
+                !empty($data['telephone']) &&
+                strlen($data['telephone']) > 9 &&
+                is_string($data['telephone']);
+
+        return $valid;
+    }
+
     public function opportunity_shortcode($atts) {
         $opp = self::opportunity($atts['id']);
         return self::opportunity_html($opp);
@@ -178,5 +195,16 @@ class Restore_Strategies_Public {
             $prefix = $atts['prefix'];
         }
         include('partials/restore-strategies-search-box.php');
+    }
+
+    public function signup_form_shortcode() {
+        $id = $_GET['opportunity_id'];
+
+        if (!empty($id)) {
+            include('partials/restore-strategies-signup-form.php');
+        }
+        else {
+            return '';
+        }
     }
 }

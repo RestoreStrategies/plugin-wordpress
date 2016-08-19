@@ -183,6 +183,7 @@ class Restore_Strategies {
         add_shortcode( 'restore-strategies-opportunity', array( $plugin_public, 'opportunity_shortcode') );
         add_shortcode( 'restore-strategies-search', array( $plugin_public, 'search_shortcode') );
         add_shortcode( 'restore-strategies-search-box', array( $plugin_public, 'search_box_shortcode') );
+        add_shortcode( 'restore-strategies-signup-form', array( $plugin_public, 'signup_form_shortcode') );
 	}
 
 	/**
