@@ -26,12 +26,17 @@
 
                 $token = $options['token'];
                 $secret = $options['secret'];
+                $signup_url = $options['signup_url'];
                 $confirmation_message = $options['confirmation_message'];
                 $hide_message = $options['hide_message'];
+                $include_church = $options['include_church'];
+                $include_campus = $options['include_campus'];
+                $signup_url = $options['signup_url'];
 
                 settings_fields($this->plugin_name);
                 do_settings_sections($this->plugin_name);
             ?>
+
             <tr>
                 <th scope="row">
                     <label for="token">API Token</label>
@@ -59,6 +64,54 @@
                         type="text"
                         class="regular-text"
                     />
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <label for="token">Signup page URL</label>
+                </th>
+                <td>
+                    <input
+                        name="<?php echo $this->plugin_name; ?>[signup_url]"
+                        id="<?php echo $this->plugin_name; ?>-signup_url"
+                        value="<?php if(!empty($signup_url)) { echo $signup_url; } ?>"
+                        type="text"
+                        class="regular-text"
+                    />
+                    <span>The relative URL of the page you want to use for the signup form.</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <label for="instructions">Include church</label>
+                </th>
+                <td>
+                    <input
+                        name="<?php echo $this->plugin_name; ?>[include_church]"
+                        id="<?php echo $this->plugin_name; ?>-include_church"
+                        type="checkbox"
+                        value="1"
+                        <?php checked($include_church, 1); ?>
+                    />
+                    <span>If you'd like volunteers to indicate which church they're a part of.</span>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">
+                    <label for="instructions">Include church campus</label>
+                </th>
+                <td>
+                    <input
+                        name="<?php echo $this->plugin_name; ?>[include_campus]"
+                        id="<?php echo $this->plugin_name; ?>-include_campus"
+                        type="checkbox"
+                        value="1"
+                        <?php checked($include_campus, 1); ?>
+                    />
+                    <span>If you'd like volunteers to indicate which church campus they're a part of.</span>
                 </td>
             </tr>
 

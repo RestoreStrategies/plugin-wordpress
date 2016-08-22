@@ -42,6 +42,12 @@ class Restore_Strategies_Public {
 
     private $client;
 
+    private $include_church;
+    private $include_campus;
+    private $hide_message;
+    private $confirmation_message;
+    private $signup_url;
+
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -56,6 +62,13 @@ class Restore_Strategies_Public {
 
 
         $options = get_option($this->plugin_name);
+
+        $this->confirmation_message = $options['confirmation_message'];
+        $this->hide_message = $options['hide_message'];
+        $this->include_church = $options['include_church'];
+        $this->include_campus = $options['include_campus'];
+        $this->signup_url = $options['signup_url'];
+
 
         $this->client = new RestoreStrategiesClient(
             $options['token'],
@@ -109,6 +122,41 @@ class Restore_Strategies_Public {
 
 	}
 
+    public function confirmation_message() {
+        if (strlen($this->confirmation_message) > 0) {
+            return $this->confirmation_message;
+        }
+
+        return "<p>Thank you for signing up!</p>";
+    }
+
+    public function signup_url() {
+        return $this->signup_url;
+    }
+
+    public function hide_message() {
+        if ($this->hide_message == "1") {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function include_church() {
+        if ($this->include_church == "1") {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function include_campus() {
+        if ($this->include_campus == "1") {
+            return true;
+        }
+
+        return false;
+    }
 
     private function opportunity($id) {
         $response = $this->client->getOpportunity($id);
@@ -173,7 +221,7 @@ class Restore_Strategies_Public {
                 strlen($data['email']) > 5 &&
                 is_string($data['email']) &&
                 !empty($data['telephone']) &&
-                strlen($data['telephone']) > 9 &&
+                strlen($data['telephone']) > 3 &&
                 is_string($data['telephone']);
 
         return $valid;
@@ -201,7 +249,7 @@ class Restore_Strategies_Public {
         $id = $_GET['opportunity_id'];
 
         if (!empty($id)) {
-            include('partials/restore-strategies-signup-form.php');
+            include('partials/restore-strategies-signup.php');
         }
         else {
             return '';

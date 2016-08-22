@@ -29,4 +29,14 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+    $(function () {
+
+        $('article.restore-strategies-opp a.details-link').click(function (event) {
+
+            event.preventDefault();
+            $(this).parent().parent().children().first().toggleClass('full_content');
+            $(this).parent().parent().children('.restore-strategies-opp-fader').toggle();
+        });
+    });
+
 })( jQuery );
