@@ -67,8 +67,30 @@ section.restore-strategies-search-box {
         margin-bottom: 1em;
 }
 
+section.restore-strategies-search-box ul {
+        list-style: none;
+}
+
+div.restore-strategies-search-categories {
+        float: left;
+        padding: 1em;
+}
+
+section.restore-strategies-search-box ul input {
+        width: auto;
+}
+
 section.restore-strategies-search-box input {
         width: 60%;
+}
+
+section.restore-strategies-search-box div.search-category {
+        float: left;
+        margin-right: 1em;
+}
+
+div.search-category h6 {
+        margin-bottom: 0.25em;
 }
 
 section.restore-strategies-signup {

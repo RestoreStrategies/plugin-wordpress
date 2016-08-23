@@ -122,6 +122,71 @@ class Restore_Strategies_Public {
 
 	}
 
+    public function issues() {
+        return [
+            'Children/Youth',
+            'Elderly',
+            'Family/Community',
+            'Foster Care/Adoption',
+            'Healthcare',
+            'Homelessness',
+            'Housing',
+            'Human Trafficking',
+            'International/Refugee',
+            'Job Training',
+            'Sanctity of Life',
+            'Sports',
+            'Incarceration'
+        ];
+    }
+
+    public function regions() {
+        return [
+            'North',
+            'Central',
+            'East',
+            'West',
+            'Other'
+        ];
+    }
+
+    public function days() {
+        return [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+            'Sunday'
+        ];
+    }
+
+    public function times() {
+        return [
+            'Morning',
+            'Mid-Day',
+            'Afternoon',
+            'Evening'
+        ];
+    }
+
+    public function types() {
+        return [
+            'Gift',
+            'Service',
+            'Training'
+        ];
+    }
+
+    public function group_types() {
+        return [
+            'Individual',
+            'Group',
+            'Family'
+        ];
+    }
+
     public function confirmation_message() {
         if (strlen($this->confirmation_message) > 0) {
             return $this->confirmation_message;
@@ -167,7 +232,9 @@ class Restore_Strategies_Public {
         $keys = array_keys($atts);
 
         for ($i = 0; $i < count($keys); $i++) {
-            $atts[$keys[$i]] = explode(',', $atts[$keys[$i]]);
+            if (!is_array($atts[$keys[$i]])) {
+                $atts[$keys[$i]] = explode(',', $atts[$keys[$i]]);
+            }
         }
 
         if (!empty($atts['q'])) {
@@ -238,10 +305,16 @@ class Restore_Strategies_Public {
 
     public function search_box_shortcode($atts) {
         $prefix = null;
+        $advanced = false;
 
         if (!empty($atts['prefix'])) {
             $prefix = $atts['prefix'];
         }
+
+        if (strtolower($atts['advanced']) == 'yes') {
+            $advanced = true;
+        }
+
         include('partials/restore-strategies-search-box.php');
     }
 
