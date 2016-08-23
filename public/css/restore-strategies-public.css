@@ -94,3 +94,9 @@ section.restore-strategies-signup textarea {
         width: 95%;
         margin-bottom: 1em;
 }
+
+@media screen and (max-width: 920px) {
+        article.restore-strategies-opp {
+                width: 100%;
+        }
+}
