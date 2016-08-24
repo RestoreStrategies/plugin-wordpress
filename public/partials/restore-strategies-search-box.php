@@ -10,7 +10,7 @@
 
         <?php if ($advanced): ?>
 
-            <button>Advanced</button>
+            <button id="advanced-search"type="button">Advanced</button>
 
             <div class="restore-strategies-search-categories">
 
@@ -34,31 +34,6 @@
                                     ?>
                                 />
                                 <?php echo $issue ?>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-
-                <div class="search-category">
-                    <h6>Days</h6>
-                    <ul>
-                        <?php foreach (self::days() as $day): ?>
-                            <li>
-                                <input
-                                    type="checkbox"
-                                    name="days[]"
-                                    id="<?php echo $day ?>"
-                                    value="<?php echo $day ?>"
-                                    <?php
-                                        $bool = !is_null($_GET['days']) &&
-                                                in_array($day, $_GET['days']);
-
-                                        if ($bool) {
-                                            echo 'checked';
-                                        }
-                                    ?>
-                                />
-                                <?php echo $day ?>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -90,31 +65,6 @@
                 </div>
 
                 <div class="search-category">
-                    <h6>Times</h6>
-                    <ul>
-                        <?php foreach (self::times() as $time): ?>
-                            <li>
-                                <input
-                                    type="checkbox"
-                                    name="times[]"
-                                    id="<?php echo $time ?>"
-                                    value="<?php echo $time ?>"
-                                    <?php
-                                        $bool = !is_null($_GET['times']) &&
-                                                in_array($time, $_GET['times']);
-
-                                        if ($bool) {
-                                            echo 'checked';
-                                        }
-                                    ?>
-                                />
-                                <?php echo $time ?>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-
-                <div class="search-category">
                     <h6>Types</h6>
                     <ul>
                         <?php foreach (self::types() as $type): ?>
@@ -140,6 +90,31 @@
                 </div>
 
                 <div class="search-category">
+                    <h6>Times</h6>
+                    <ul>
+                        <?php foreach (self::times() as $time): ?>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name="times[]"
+                                    id="<?php echo $time ?>"
+                                    value="<?php echo $time ?>"
+                                    <?php
+                                        $bool = !is_null($_GET['times']) &&
+                                                in_array($time, $_GET['times']);
+
+                                        if ($bool) {
+                                            echo 'checked';
+                                        }
+                                    ?>
+                                />
+                                <?php echo $time ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
+                <div class="search-category">
                     <h6>Groups</h6>
                     <ul>
                         <?php foreach (self::group_types() as $group_type): ?>
@@ -159,6 +134,31 @@
                                     ?>
                                 />
                                 <?php echo $group_type ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
+                <div class="search-category">
+                    <h6>Days</h6>
+                    <ul>
+                        <?php foreach (self::days() as $day): ?>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name="days[]"
+                                    id="<?php echo $day ?>"
+                                    value="<?php echo $day ?>"
+                                    <?php
+                                        $bool = !is_null($_GET['days']) &&
+                                                in_array($day, $_GET['days']);
+
+                                        if ($bool) {
+                                            echo 'checked';
+                                        }
+                                    ?>
+                                />
+                                <?php echo $day ?>
                             </li>
                         <?php endforeach; ?>
                     </ul>

@@ -31,12 +31,21 @@
 
     $(function () {
 
+        if($("input[type=checkbox]:checked").length == 0) {
+            $('.restore-strategies-search-categories').addClass('hide');
+        }
+
         $('article.restore-strategies-opp a.details-link').click(function (event) {
 
             event.preventDefault();
             $(this).parent().parent().children().first().toggleClass('full_content');
             $(this).parent().parent().children('.restore-strategies-opp-fader').toggle();
         });
+
+       $('#advanced-search').click(function(event) {
+
+           $('.restore-strategies-search-categories').slideToggle();
+       }); 
     });
 
 })( jQuery );

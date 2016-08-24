@@ -3,6 +3,10 @@
  * included in this file.
  */
 
+.hide {
+        display: none;
+}
+
 article.restore-strategies-opp {
         float: left;
         margin: 0 1em 1em 0;
@@ -65,15 +69,19 @@ article.restore-strategies-opp dt, article.restore-strategies-opp dd {
 
 section.restore-strategies-search-box {
         margin-bottom: 1em;
+        float: left;
+        width: 100%;
 }
 
 section.restore-strategies-search-box ul {
         list-style: none;
+        margin: 1em;
 }
 
 div.restore-strategies-search-categories {
         float: left;
         padding: 1em;
+        background: whitesmoke;
 }
 
 section.restore-strategies-search-box ul input {
@@ -86,7 +94,7 @@ section.restore-strategies-search-box input {
 
 section.restore-strategies-search-box div.search-category {
         float: left;
-        margin-right: 1em;
+        width: 33%;
 }
 
 div.search-category h6 {
