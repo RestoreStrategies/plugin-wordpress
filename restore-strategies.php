@@ -29,6 +29,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-restore-strategies-activator.php
@@ -37,6 +38,17 @@ function activate_restore_strategies() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-restore-strategies-activator.php';
 	Restore_Strategies_Activator::activate();
 }
+
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+    register_post_type( 'restore_strategies',
+        array(
+            'public' => false
+        )
+    );
+}
+
 
 /**
  * The code that runs during plugin deactivation.
