@@ -311,7 +311,7 @@ class Restore_Strategies_Public {
             $prefix = $atts['prefix'];
         }
 
-        if (strtolower($atts['advanced']) == 'yes') {
+        if (!empty($atts['advanced']) && strtolower($atts['advanced']) == 'yes') {
             $advanced = true;
         }
 
