@@ -31,6 +31,14 @@ class Restore_Strategies_Deactivator {
 	 */
 	public static function deactivate() {
 
+        $posts = query_posts(array(
+            'post_type' => 'restore_strategies'
+        ));
+
+        for ($id = 0; $id < count($posts); $id++) {
+            $posts[$id]->post_status = 'pending';
+            wp_update_post($posts[$id]);
+        }
 	}
 
 }

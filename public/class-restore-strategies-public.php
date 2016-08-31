@@ -122,6 +122,16 @@ class Restore_Strategies_Public {
 
 	}
 
+    public function signup_template($single_template) {
+        $post = get_post();
+
+        if($post->post_type == 'restore_strategies') {
+            $single_template = dirname(__FILE__) . '/partials/restore-strategies-signup-template.php';
+        }
+
+        return $single_template;
+    }
+
     public function issues() {
         return [
             'Children/Youth',

@@ -43,7 +43,7 @@
     <div class="restore-strategies-opp-fader">&nbsp;</div>
 
     <div class="links">
-        <a class="signup-link" href="<?php echo $this::signup_url(); ?>?opportunity_id=<?php echo $opp->id; ?>">
+        <a class="signup-link" href="/rs-signup/form/?opportunity_id=<?php echo $opp->id; ?>">
             Signup
         </a>
 
