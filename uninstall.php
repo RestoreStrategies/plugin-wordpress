@@ -36,3 +36,14 @@ delete_option( $option_name );
  
 // For site options in Multisite
 delete_site_option( $option_name );
+
+// Delete restore strategies posts
+$posts = query_posts(array(
+    'post_type' => 'restore_strategies'
+));
+
+if (count($posts) > 0) {
+    for ($id = 0; $id < count($posts); $id++) {
+        wp_delete_post($posts[$id]->ID, true);
+    }
+}
