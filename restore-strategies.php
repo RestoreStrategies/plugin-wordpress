@@ -40,11 +40,13 @@ function activate_restore_strategies() {
 }
 
 
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
+add_action( 'init', 'restore_strategies_create_post_type' );
+function restore_strategies_create_post_type() {
     register_post_type( 'restore_strategies',
         array(
-            'public' => false
+            'rewrite' => array('slug' => 'rs-signup', 'with_front' => false),
+            'public' => false,
+            'publicly_queryable' => true
         )
     );
 }
