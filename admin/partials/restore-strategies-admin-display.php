@@ -66,7 +66,6 @@
                 $hide_message = $options['hide_message'];
                 $include_church = $options['include_church'];
                 $include_campus = $options['include_campus'];
-                $signup_url = $options['signup_url'];
 
                 settings_fields($this->plugin_name);
                 do_settings_sections($this->plugin_name);
@@ -101,23 +100,6 @@
                         class="regular-text"
                         required
                     />
-                </td>
-            </tr>
-
-            <tr>
-                <th scope="row">
-                    <label for="token">Signup page URL*</label>
-                </th>
-                <td>
-                    <input
-                        name="<?php echo $this->plugin_name; ?>[signup_url]"
-                        id="<?php echo $this->plugin_name; ?>-signup_url"
-                        value="<?php if(!empty($signup_url)) { echo $signup_url; } ?>"
-                        type="text"
-                        class="regular-text"
-                        required
-                    />
-                    <span>The URL of the page you put the sign-up form on (you need to create this page).</span>
                 </td>
             </tr>
 
