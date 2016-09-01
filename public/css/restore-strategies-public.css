@@ -16,6 +16,12 @@ article.restore-strategies-opp {
         position: relative;
 }
 
+article.restore-strategies-opp.rs-opp-single {
+        float: left;
+        margin: auto;
+        width: 75%;
+}
+
 article.restore-strategies-opp h3 {
         margin: 0.25em 0;
 }
@@ -31,6 +37,7 @@ article.restore-strategies-opp div.restore-strategies-opp-content {
         overflow: hidden;
         float: left;
         position: relative;
+        background: inherit;
 }
 
 article.restore-strategies-opp div.full_content {

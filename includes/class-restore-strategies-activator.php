@@ -35,7 +35,7 @@ class Restore_Strategies_Activator {
             'post_type' => 'restore_strategies'
         ));
 
-        if (count($posts) > 0) {
+        if (count($posts) > 1) {
             for ($id = 0; $id < count($posts); $id++) {
                 $posts[$id]->post_status = 'publish';
                 wp_update_post($posts[$id]);
@@ -53,6 +53,19 @@ class Restore_Strategies_Activator {
                 ),
                 true
             );
+
+            wp_insert_post(
+                array(
+                    'post_title' => 'Volunteer Opportunity',
+                    'post_content' => '[restore-strategies-opportunity]',
+                    'comment_status' => 'closed',
+                    'post_type' => 'restore_strategies',
+                    'post_status' => 'publish',
+                    'post_name' => 'show'
+                ),
+                true
+            );
+
         }
 	}
 

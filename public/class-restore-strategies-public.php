@@ -272,7 +272,7 @@ class Restore_Strategies_Public {
         return $html;
     }
 
-    private function opportunity_html($opp) {
+    private function opportunity_html($opp, $class) {
         include('partials/restore-strategies-opportunity.php');
     }
 
@@ -305,8 +305,18 @@ class Restore_Strategies_Public {
     }
 
     public function opportunity_shortcode($atts) {
-        $opp = self::opportunity($atts['id']);
-        return self::opportunity_html($opp);
+        if (!empty($atts['id'])) {
+            $opp = self::opportunity($atts['id']);
+            $class = 'rs-opp-group';
+            return self::opportunity_html($opp, $class);
+        }
+        else if (!empty($_GET['opportunity_id'])) {
+            $opp = self::opportunity($_GET['opportunity_id']);
+            $class='rs-opp-single';
+            return self::opportunity_html($opp, $class);
+        }
+
+        return '<p class="error">valid id not given</p>';
     }
 
     public function search_shortcode($atts) {
