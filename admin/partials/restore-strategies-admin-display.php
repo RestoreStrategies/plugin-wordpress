@@ -15,45 +15,35 @@
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 
-<div class='wrap'>
+<div class='wrap rsa'>
     <h1>Restore Strategies Settings</h1>
 
+    <p>To setup the Restore Strategies plugin, provide your API credentials. Then, feel free to use Restore Strategies’ shortcodes throughout your site.</p>
 
-    <p>To setup the Restore Strategies plugin, provide your API credentials & create a signup page (a page with the <b>[restore-strategies-signup-form]</b> shortcode on it).</p>
+    <p>Three shortcodes are available. For details, look at them <a id="rsa-reveal" href="#">here</a> or <b><a href="/wp-admin/edit.php?s=%5BRestore+Strategies+Example%5D&post_status=all&post_type=page">check out your pages for some examples</a></b>.</p>
 
-    <p>Then, feel free to use Restore Strategies’ shortcodes throughout your site. Four shortcodes are available.</p>
+    <div class="rsa-hide">
+        <h2>[restore-strategies-opportunity]</h2>
 
-    <h2>[restore-strategies-opportunity]</h2>
+        <p>This shortcode displays a single opportunity based on it’s id. For example,<br />
+        <kbd>[restore-strategies-opportunity id="511"]</kbd></p>
+       
+        <h2>[restore-strategies-search-box]</h2>
+        
+        <p>This shortcode creates a search box. The search box can be simple, with just a text input field, or advanced with several categories of check boxes. If you would like every search to be prefixed with a certain term, you can provide that. For example,<br />
+        <kbd>[restore-strategies-search-box advanced="yes" prefix="foster care"]</kbd></p>
+        
+        <h2>[restore-strategies-search]</h2>
+        
+        <p>This shortcode does a search & returns the results. It's the fastest way to list several opportunities on a page if they can all be found from a single search. It's possible to do an advanced search with several different parameters. The possible parameters are listed below:</p>
+        
+        <kbd>[restore-strategies-search q="&lt;search term&gt;" issues="&lt;issue 1&gt;,&lt;issue 2&gt;,..." regions="&lt;region 1&gt;,&lt;region 2&gt;,..." times="&lt;time 1&gt;,&lt;time 2&gt;,..." days="&lt;day 1&gt;,&lt;day 1&gt;,..."  type="&lt;opportunity type 1&gt;,&lt;opportunity type 2&gt;,..." group_type="&lt;group type 1&gt;,&lt;group type 2&gt;,..."]</kbd>
+        
+        <p>For example:</p>
+        
+        <kbd>[restore-strategies-search q="foster care" issues="Children/Youth,Sports" regions="North,Central" times="Morning,Evening" days="Monday,Thursday" type="Service,Training" group_type="Individual,Group"]</kbd>
+    </div>
 
-    <p>This shortcode displays a single opportunity based on it’s id. For example,<br />
-    <kbd>[restore-strategies-opportunity id="511"]</kbd></p>
-    
-    <h2>[restore-strategies-signup-form]</h2>
-    
-    <p>This shortcode creates a signup form. It takes no parameters & must be used on at least one page for the plugin to work correctly.</p>
-    
-    <h2>[restore-strategies-search-box]</h2>
-    
-    <p>This shortcode creates a search box. The search box can be simple, with just a text input field, or advanced with several categories of check boxes. If you would like every search to be prefixed with a certain term, you can provide that. For example,<br />
-    <kbd>[restore-strategies-search-box advanced="yes" prefix="foster care"]</kbd></p>
-    
-    <h2>[restore-strategies-search]</h2>
-    
-    <p>This shortcode does a search & returns the results. It's the fastest way to list several opportunities on a page if they can all be found from a single search. It's possible to do an advanced search with several different parameters. The possible parameters are listed below:</p>
-    
-    <kbd>[restore-strategies-search<br />
-        &nbsp;&nbsp;q="&lt;search term&gt;"<br />
-        &nbsp;&nbsp;issues="&lt;issue 1&gt;,&lt;issue 2&gt;,..."<br />
-        &nbsp;&nbsp;regions="&lt;region 1&gt;,&lt;region 2&gt;,..."<br />
-        &nbsp;&nbsp;times="&lt;time 1&gt;,&lt;time 2&gt;,..."<br />
-        &nbsp;&nbsp;days="&lt;day 1&gt;,&lt;day 1&gt;,..."<br />
-        &nbsp;&nbsp;type="&lt;opportunity type 1&gt;,&lt;opportunity type 2&gt;,..."<br />
-        &nbsp;&nbsp;group_type="&lt;group type 1&gt;,&lt;group type 2&gt;,..."<br />
-    ]</kbd>
-    
-    <p>For example:</p>
-    
-    <kbd>[restore-strategies-search q="foster care" issues="Children/Youth,Sports" regions="North,Central" times="Morning,Evening" days="Monday,Thursday" type="Service,Training" group_type="Individual,Group"]</kbd>
     <form method="post" action="options.php">
         <table class="form-table">
             <?php
@@ -138,9 +128,9 @@
             <tr>
                 <th scope="row">
                     <label for="secret">Custom confirmation message</label>
+                    <p>The default message is <em>"Thank you for signing up!"</em> <b>Optionally, you can customize this to say whatever you want</b>. This will appear on the sign-up confirmation page.</p>
                 </th>
                 <td>
-                    <p>Optionally, include a message that will appear on the sign-up confirmation page. The default message is "Thank you for signing up!"</p><br />
                     <textarea
                         name="<?php echo $this->plugin_name; ?>[confirmation_message]"
                         id="<?php echo $this->plugin_name; ?>-confirmation_message"
@@ -153,6 +143,7 @@
             <tr>
                 <th scope="row">
                     <label for="instructions">Hide post-signup instructions</label>
+                    <p>Sometimes volunteer opportunities have specific next step instructions after signup. Check this box if you <b>do not want those instructions displayed</b> on the sign-up confirmation page.</p>
                 </th>
                 <td>
                     <input
@@ -161,8 +152,7 @@
                         type="checkbox"
                         value="1"
                         <?php checked($hide_message, 1); ?>
-                    />
-                    <span>Do not display opportunity specific next step instructions on the sign-up confirmation page.</span>
+                    /> 
                 </td>
             </tr>
 

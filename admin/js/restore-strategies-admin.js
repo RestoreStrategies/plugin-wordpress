@@ -29,4 +29,11 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+    $(function () {
+        $('#rsa-reveal').click(function (event) {
+
+            event.preventDefault();
+            $('.rsa-hide').slideToggle();
+        });
+    });
 })( jQuery );
