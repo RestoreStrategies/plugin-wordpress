@@ -39,6 +39,15 @@ class Restore_Strategies_Deactivator {
             $posts[$id]->post_status = 'pending';
             wp_update_post($posts[$id]);
         }
-	}
 
+        $delete_posts = array_merge(
+            query_posts(['s' => '[Restore Strategies Example] Opportunity']),
+            query_posts(['s' => '[Restore Strategies Example] Search']),
+            query_posts(['s' => '[Restore Strategies Example] Search Box'])
+        );
+
+        foreach ($delete_posts as $dpost) {
+            wp_delete_post($dpost->ID, true);
+        }
+	}
 }
