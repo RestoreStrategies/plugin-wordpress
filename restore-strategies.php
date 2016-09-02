@@ -49,6 +49,7 @@ function restore_strategies_create_post_type() {
             'publicly_queryable' => true
         )
     );
+    flush_rewrite_rules(false);
 }
 
 
