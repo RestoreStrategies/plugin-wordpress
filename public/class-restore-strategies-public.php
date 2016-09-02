@@ -272,13 +272,15 @@ class Restore_Strategies_Public {
         return $html;
     }
 
-    private function opportunity_html($opp, $class) {
+    private function opportunity_html($opp, $class = 'rs-opp-group') {
+
         include('partials/restore-strategies-opportunity.php');
     }
 
     private function search_results_html($prefix) {
         unset($_GET['page_id']);
         unset($_GET['id']);
+        unset($_GET['preview']);
 
         if(empty($_GET)) {
             return '';
