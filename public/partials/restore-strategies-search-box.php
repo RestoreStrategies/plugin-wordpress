@@ -1,5 +1,3 @@
-<?php var_dump($exclude); ?>
-
 <section class="restore-strategies-search-box">
     <form method="get" action="<?php $_SERVER['REQUEST_URI'] ?>">
         <input
@@ -15,6 +13,33 @@
             <button id="advanced-search"type="button">Advanced</button>
 
             <div class="restore-strategies-search-categories">
+
+                <?php if (!empty($category_title) || !empty($category)): ?>
+                    <div class="search-category">
+                        <h6><?php echo $category_title; ?></h6>
+                        <ul>
+                            <?php foreach ($category as $item): ?>
+                                <li>
+                                    <input
+                                        type="checkbox"
+                                        name="custom_category[]"
+                                        id="<?php echo $item; ?>"
+                                        value="<?php echo $item ?>"
+                                        <?php
+                                            $bool = !is_null($_GET['custom_category']) &&
+                                                    in_array($item, $_GET['custom_category']);
+
+                                            if ($bool) {
+                                                echo 'checked';
+                                            }
+                                        ?>
+                                    />
+                                    <?php echo $item; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
 
                 <?php if (!in_array('Issues', $exclude)): ?>
                     <div class="search-category">

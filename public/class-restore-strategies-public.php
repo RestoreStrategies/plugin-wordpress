@@ -255,6 +255,13 @@ class Restore_Strategies_Public {
             $atts['q'] = $prefix . ' ' . $atts['q'];
         }
 
+        if (!empty($atts['custom_category'])) {
+            $atts['q'] .= implode(' ', $atts['custom_category']);
+            unset($atts['custom_category']);
+        }
+
+        var_dump($atts);
+
         $response = $this->client->search($atts);
 
         $items = $response->items();
@@ -281,6 +288,8 @@ class Restore_Strategies_Public {
         unset($_GET['page_id']);
         unset($_GET['id']);
         unset($_GET['preview']);
+        unset($_GET['preview_id']);
+        unset($_GET['preview_nonce']);
 
         if(empty($_GET)) {
             return '';
@@ -332,6 +341,14 @@ class Restore_Strategies_Public {
         $prefix = null;
         $advanced = false;
         $exclude = [];
+
+        $category_title = null;
+        $category = [];
+
+        if (!empty($atts['category'])) {
+            $category = explode(',', $atts['category']);
+            $category_title = array_shift($category);
+        }
 
         if (!empty($atts['exclude'])) {
             $exclude = explode(',', $atts['exclude']);

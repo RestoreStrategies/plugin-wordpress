@@ -35,7 +35,7 @@ class Restore_Strategies_Activator {
 
 <em>Here\'s an example using the id 511. (Note that this opportunity may not be available in your region).</em>
 
-[restore-strategies-opportunity id="511"]';
+<strong>[restore-strategies-opportunity id="511"]</strong>';
 
         $search_example_copy = '<b>The fastest way to display several similar opportunities on a page</b> is to use the <b>search shortcode</b>. Based on a specific, hardcoded search it displays a list of opportunities. The search shortcode has <em>7 optional parameters</em>.
 <ol>
@@ -49,21 +49,22 @@ class Restore_Strategies_Activator {
 </ol>
 <em>Here\'s an example using all of the parameters.</em>
 
-[restore-strategies-search q="foster care" issues="Children/Youth,Sports" regions="North,Central" times="Morning,Evening" days="Monday,Thursday" type="Service,Training" group_type="Individual,Group"]
-';
+<strong>[restore-strategies-search q="foster care" issues="Children/Youth,Sports" regions="North,Central" times="Morning,Evening" days="Monday,Thursday" type="Service,Training" group_type="Individual,Group"]</strong>';
 
-        $searchbox_example_copy = 'Display a search box for users can search opportunities using the <b>search box</b> shortcode. The search box shortcode has <em>2 optional parameters</em>.
+        $searchbox_example_copy = 'Display a search box for users can search opportunities using the <b>search box</b> shortcode. The search box shortcode has <em>4 optional parameters</em>.
 <ol>
- 	<li><strong>advanced</strong>. Display advanced search options</li>
- 	<li><strong>prefix</strong>. Put text here that you would like to include in all of the searches done with this search box.</li>
-</ol>
-In this example advanced search options will be displayed &amp; every search will be prefixed with the words "foster care".
+    <li><strong>advanced</strong>. Display advanced search options</li>
+    <li><strong>prefix</strong>. Put text here that you would like to include in all of the searches done with this search box.</li>
+    <li><strong>exclude</strong>. In the advanced search layout, select which default checkbox categories to exclude</li>
+    <li><strong>category</strong>. In the advanced search layout, create a category of checkboxes. The first item in this will be the name of the category, &amp; the rest will be the checkbox options.</li>
+    </ol>
+    In this example advanced search options will be displayed, every search will be prefixed with the words "foster care", the Issues &amp; Groups categories will not be displayed, &amp; an Engagements category will be displayed with the Prevent, Support, Foster, Sustain, &amp; Remain as options.
 
-[restore-strategies-search-box advanced="yes" prefix="foster care"]
+    <strong>[restore-strategies-search-box advanced="yes" prefix="foster care" exclude="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]</strong>
 
-In this example advanced search options will not be displayed &amp; searches will not be prefixed with anything.
+    In this example advanced search options will not be displayed &amp; searches will not be prefixed with anything.
 
-[restore-strategies-search-box]';
+    <strong>[restore-strategies-search-box]</strong>';
 
         $posts = query_posts(array(
             'post_type' => 'restore_strategies'
