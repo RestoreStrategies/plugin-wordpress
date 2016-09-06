@@ -325,9 +325,17 @@ class Restore_Strategies_Public {
         return self::search($atts, null);
     }
 
+    /*
+     * [search-box category="Stages,Fast,Slow,First,Last"]
+     */ 
     public function search_box_shortcode($atts) {
         $prefix = null;
         $advanced = false;
+        $exclude = [];
+
+        if (!empty($atts['exclude'])) {
+            $exclude = explode(',', $atts['exclude']);
+        }
 
         if (!empty($atts['prefix'])) {
             $prefix = $atts['prefix'];
