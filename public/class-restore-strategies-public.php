@@ -350,8 +350,8 @@ class Restore_Strategies_Public {
             $category_title = array_shift($category);
         }
 
-        if (!empty($atts['exclude'])) {
-            $exclude = explode(',', $atts['exclude']);
+        if (!empty($atts['hide'])) {
+            $exclude = explode(',', $atts['hide']);
         }
 
         if (!empty($atts['prefix'])) {
