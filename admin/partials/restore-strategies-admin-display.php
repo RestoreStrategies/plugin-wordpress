@@ -25,13 +25,13 @@
     <div class="rsa-hide">
         <h2>[restore-strategies-opportunity]</h2>
 
-        <p>This shortcode displays a single opportunity based on it’s id. For example,<br />
+        <p>This shortcode displays a single opportunity based on it’s id. For example,<br /><br />
         <kbd>[restore-strategies-opportunity id="511"]</kbd></p>
        
         <h2>[restore-strategies-search-box]</h2>
         
-        <p>This shortcode creates a search box. The search box can be simple, with just a text input field, or advanced with several categories of check boxes. If you would like every search to be prefixed with a certain term, you can provide that. For example,<br />
-        <kbd>[restore-strategies-search-box advanced="yes" prefix="foster care"]</kbd></p>
+        <p>This shortcode creates a search box. The search box can be simple, with just a text input field, or advanced with several categories of check boxes. If you would like every search to be prefixed with a certain term, you can provide that. In advanced search, you can hide checkbox categories if you'd like. You can also create your own category. For example,<br /><br />
+        <kbd>[restore-strategies-search-box advanced="yes" prefix="foster care" hide="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]</kbd></p>
         
         <h2>[restore-strategies-search]</h2>
         
@@ -41,7 +41,7 @@
         
         <p>For example:</p>
         
-        <kbd>[restore-strategies-search q="foster care" issues="Children/Youth,Sports" regions="North,Central" times="Morning,Evening" days="Monday,Thursday" type="Service,Training" group_type="Individual,Group"]</kbd>
+        <kbd>[restore-strategies-search q="foster care" issues="Children/Youth,Sports" regions="North,Central" times="Morning,Evening" days="Monday,Thursday,Sunday" type="Service,Training" group_type="Individual,Group"]</kbd>
     </div>
 
     <form method="post" action="options.php">
@@ -143,7 +143,7 @@
             <tr>
                 <th scope="row">
                     <label for="instructions">Hide post-signup instructions</label>
-                    <p>Sometimes volunteer opportunities have specific next step instructions after signup. Check this box if you <b>do not want those instructions displayed</b> on the sign-up confirmation page.</p>
+                    <p>Some volunteer opportunities have specific next step instructions after signup. Check this box if you <b>do not want those instructions displayed</b> on the sign-up confirmation page.</p>
                 </th>
                 <td>
                     <input

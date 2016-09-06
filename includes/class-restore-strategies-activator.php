@@ -55,12 +55,12 @@ class Restore_Strategies_Activator {
 <ol>
     <li><strong>advanced</strong>. Display advanced search options</li>
     <li><strong>prefix</strong>. Put text here that you would like to include in all of the searches done with this search box.</li>
-    <li><strong>exclude</strong>. In the advanced search layout, select which default checkbox categories to exclude</li>
+    <li><strong>hide</strong>. In the advanced search layout, select which default checkbox categories to hide</li>
     <li><strong>category</strong>. In the advanced search layout, create a category of checkboxes. The first item in this will be the name of the category, &amp; the rest will be the checkbox options.</li>
     </ol>
     In this example advanced search options will be displayed, every search will be prefixed with the words "foster care", the Issues &amp; Groups categories will not be displayed, &amp; an Engagements category will be displayed with the Prevent, Support, Foster, Sustain, &amp; Remain as options.
 
-    [restore-strategies-search-box advanced="yes" prefix="foster care" exclude="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]
+    [restore-strategies-search-box advanced="yes" prefix="foster care" hide="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]
 
     In this example advanced search options will not be displayed &amp; searches will not be prefixed with anything.
 
