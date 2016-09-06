@@ -260,8 +260,6 @@ class Restore_Strategies_Public {
             unset($atts['custom_category']);
         }
 
-        var_dump($atts);
-
         $response = $this->client->search($atts);
 
         $items = $response->items();
@@ -281,7 +279,9 @@ class Restore_Strategies_Public {
 
     private function opportunity_html($opp, $class = 'rs-opp-group') {
 
+        ob_start();
         include('partials/restore-strategies-opportunity.php');
+        return ob_get_clean();
     }
 
     private function search_results_html($prefix) {
@@ -362,7 +362,9 @@ class Restore_Strategies_Public {
             $advanced = true;
         }
 
+        ob_start();
         include('partials/restore-strategies-search-box.php');
+        return ob_get_clean();
     }
 
     public function signup_form_shortcode() {
