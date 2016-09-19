@@ -22,6 +22,8 @@
 
     <p>Three shortcodes are available. For details, look at them <a id="rsa-reveal" href="#">here</a> or <b><a href="/wp-admin/edit.php?s=%5BRestore+Strategies+Example%5D&post_status=all&post_type=page">check out your pages for some examples</a></b>.</p>
 
+    <p><strong>Note: This plugin may not work correctly if your site's permalinks are set to <em>Plain</em>. You can check your permalinks settings <a href="/wp-admin/options-permalink.php">here</a>.</strong></p>
+
     <div class="rsa-hide">
         <h2>[restore-strategies-opportunity]</h2>
 
