@@ -1,4 +1,4 @@
-<article class="restore-strategies-opp <?php echo $class ?>">
+<article class="restore-strategies-opp <?php echo $class ?> <?php if ($opp->closed) { echo 'opp-closed'; } ?>">
     <div class="restore-strategies-opp-content">
         <b class="organization"><?php echo $opp->organization ?></b>
         <h3>
