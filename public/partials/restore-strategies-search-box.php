@@ -1,16 +1,20 @@
 <section class="restore-strategies-search-box">
     <form method="get" action="<?php $_SERVER['REQUEST_URI'] ?>">
         <input
-            type="text"
+            type="search"
             name="q"
             placeholder="&nbsp;&nbsp;search opportunities"
             value="<?php echo (!empty($_GET['q']) ? $_GET['q'] : '') ?>"
         />
-        <button type="submit">Search</button>
+
+        <div class="rs-search-buttons">
+            <button type="submit">Search</button>
+            <?php if ($advanced): ?>
+                <button id="advanced-search"type="button">Advanced</button>
+            <?php endif; ?>
+        </div>
 
         <?php if ($advanced): ?>
-
-            <button id="advanced-search"type="button">Advanced</button>
 
             <div class="restore-strategies-search-categories">
 

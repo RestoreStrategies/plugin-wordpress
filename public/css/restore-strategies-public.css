@@ -95,8 +95,25 @@ section.restore-strategies-search-box ul input {
         width: auto;
 }
 
+div.rs-search-buttons {
+        display: block;
+        float: left;
+        width: 245px;
+}
+
+div.rs-search-buttons button {
+        display: block;
+        float: left;
+        margin-left: 0.5em;
+}
+
+section.restore-strategies-search-box input[type='search'] {
+        max-width: 70%;
+        display: block;
+}
+
 section.restore-strategies-search-box input {
-        width: 60%;
+        float: left;
 }
 
 section.restore-strategies-search-box div.search-category {
