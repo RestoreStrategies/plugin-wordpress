@@ -62,7 +62,6 @@
             placeholder="your church"
             type="text"
             name="church"
-            required
             value="<?php if(!empty($_POST['church'])) { echo $_POST['church']; } ?>"
         />
     <?php endif; ?>
@@ -73,7 +72,6 @@
             placeholder="your church campus"
             type="text"
             name="campus"
-            required
             value="<?php if(!empty($_POST['campus'])) { echo $_POST['campus']; } ?>"
         />
     <?php endif; ?>
