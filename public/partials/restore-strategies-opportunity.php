@@ -2,7 +2,7 @@
     <div class="restore-strategies-opp-content">
         <b class="organization"><?php echo $opp->organization ?></b>
         <h3>
-            <a href="/rs/show/?opportunity_id=<?php echo $opp->id; ?>">
+            <a href="<?php echo get_site_url(); ?>/rs/show/?opportunity_id=<?php echo $opp->id; ?>">
                 <?php echo $opp->name ?>
             </a>
         </h3>
@@ -47,7 +47,7 @@
     <div class="restore-strategies-opp-fader">&nbsp;</div>
 
     <div class="links">
-        <a class="signup-link" href="/rs/form/?opportunity_id=<?php echo $opp->id; ?>">
+        <a class="signup-link" href="<?php echo get_site_url(); ?>/rs/form/?opportunity_id=<?php echo $opp->id; ?>">
             Signup
         </a>
 
