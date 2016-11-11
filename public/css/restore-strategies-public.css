@@ -74,6 +74,16 @@ article.restore-strategies-opp dt, article.restore-strategies-opp dd {
         display: inline;
 }
 
+article.restore-strategies-opp div.links a {
+        display: block;
+        float: left;
+        margin-right: 1em;
+        padding: 0.5em;
+        background: white;
+        color: black;
+        text-decoration: none;
+}
+
 section.restore-strategies-search-box {
         margin-bottom: 1em;
         float: left;
