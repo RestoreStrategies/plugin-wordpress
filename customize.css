@@ -1,0 +1,86 @@
+/**
+ * Use this file to customize the styling of the search, signup, & opporutnities
+ * of the Restore Strategies plugin.
+ */
+article.restore-strategies-opp {
+}
+
+article.restore-strategies-opp.rs-opp-single {
+}
+
+article.restore-strategies-opp h3 {
+}
+
+article.restore-strategies-opp div {
+}
+
+article.restore-strategies-opp div.restore-strategies-opp-content {
+}
+
+article.restore-strategies-opp div.full_content {
+}
+
+div.restore-strategies-opp-fader {
+}
+
+article.restore-strategies-opp div.details {
+}
+
+article.restore-strategies-opp div.details div {
+}
+
+article.restore-strategies-opp dt {
+}
+
+article.restore-strategies-opp dt, article.restore-strategies-opp dd {
+}
+
+section.restore-strategies-search-box {
+}
+
+section.restore-strategies-search-box ul {
+}
+
+div.restore-strategies-search-categories {
+}
+
+section.restore-strategies-search-box ul input {
+}
+
+div.rs-search-buttons {
+}
+
+div.rs-search-buttons button {
+}
+
+section.restore-strategies-search-box input[type='search'] {
+}
+
+section.restore-strategies-search-box input {
+}
+
+section.restore-strategies-search-box div.search-category {
+}
+
+div.search-category h6 {
+}
+
+section.restore-strategies-signup {
+}
+
+section.restore-strategies-signup .error {
+}
+
+section.restore-strategies-signup input[type="text"],
+section.restore-strategies-signup input[type="email"],
+section.restore-strategies-signup input[type="tel"],
+section.restore-strategies-signup span {
+}
+
+section.restore-strategies-signup textarea {
+}
+
+@media screen and (max-width: 920px) {
+        article.restore-strategies-opp {
+        }
+}
