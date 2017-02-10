@@ -1,4 +1,4 @@
-FROM wordpress:4.5-apache
+FROM wordpress:4.7.2-apache
 
 MAINTAINER Joseph Simmons 'joseph@forthecity.org'
 ENV REFRESHED 2016-08-15
