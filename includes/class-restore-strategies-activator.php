@@ -54,7 +54,7 @@ class Restore_Strategies_Activator {
         $searchbox_example_copy = 'Display a search box so users can search opportunities using the <b>search box</b> shortcode. The search box shortcode has <em>5 optional parameters</em>.
 <ol>
     <li><strong>advanced</strong>. Display an Advanced search button & advanced search options. <em>Possible values: yes|no.</em></li>
-    <li><strong>collapse</strong>. If advanced search is activated, this paramter indicates whether to show or collapse the advanced search layout by default. If hidden, clicking "Advanced" will reveal the layout, and vice versa. <em>Values: yes|no.</em></li>
+    <li><strong>collapse</strong>. If advanced search is activated, this parameter indicates whether to show or collapse the advanced search layout by default. If hidden, clicking "Advanced" will reveal the layout, and vice versa. <em>Values: yes|no.</em></li>
     <li><strong>prefix</strong>. Put text here that you would like to include in all of the searches done with this search box.</li>
     <li><strong>hide</strong>. In the advanced search layout, select which default checkbox categories to hide</li>
     <li><strong>category</strong>. In the advanced search layout, create a category of checkboxes. The first item in this will be the name of the category, &amp; the rest will be the checkbox options.</li>
