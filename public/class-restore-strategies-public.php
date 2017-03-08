@@ -340,6 +340,7 @@ class Restore_Strategies_Public {
     public function search_box_shortcode($atts) {
         $prefix = null;
         $advanced = false;
+        $collapse = true;
         $exclude = [];
 
         $category_title = null;
@@ -360,6 +361,10 @@ class Restore_Strategies_Public {
 
         if (!empty($atts['advanced']) && strtolower($atts['advanced']) == 'yes') {
             $advanced = true;
+        }
+
+        if (!empty($atts['collapse']) && strtolower($atts['collapse']) == 'no') {
+            $collapse = false;
         }
 
         ob_start();

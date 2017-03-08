@@ -32,8 +32,8 @@
        
         <h2>[restore-strategies-search-box]</h2>
         
-        <p>This shortcode creates a search box. The search box can be simple, with just a text input field, or advanced with several categories of check boxes. If you would like every search to be prefixed with a certain term, you can provide that. In advanced search, you can hide checkbox categories if you'd like. You can also create your own category. For example,<br /><br />
-        <kbd>[restore-strategies-search-box advanced="yes" prefix="foster care" hide="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]</kbd></p>
+        <p>This shortcode creates a search box. The search box can be simple, with just a text input field, or advanced with several categories of check boxes. You can choose to collapse or reveal the advanced search layout by default. If you would like every search to be prefixed with a certain term, you can provide that. In advanced search, you can hide checkbox categories if you'd like. You can also create your own category. For example,<br /><br />
+        <kbd>[restore-strategies-search-box advanced="yes" collapse="yes" prefix="foster care" hide="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]</kbd></p>
         
         <h2>[restore-strategies-search]</h2>
         

@@ -32,7 +32,7 @@
     $(function () {
 
         if($("input[type=checkbox]:checked").length == 0) {
-            $('.restore-strategies-search-categories').addClass('hide');
+            $('.restore-strategies-search-categories.rs-collapse').addClass('rs-hide');
         }
 
         $('article.restore-strategies-opp a.details-link').click(function (event) {

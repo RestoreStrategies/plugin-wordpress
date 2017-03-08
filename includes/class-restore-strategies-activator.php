@@ -51,16 +51,17 @@ class Restore_Strategies_Activator {
 
 [restore-strategies-search q="foster care" issues="Children/Youth,Sports" regions="North,Central" times="Morning,Evening" days="Monday,Thursday" type="Service,Training" group_type="Individual,Group"]';
 
-        $searchbox_example_copy = 'Display a search box for users can search opportunities using the <b>search box</b> shortcode. The search box shortcode has <em>4 optional parameters</em>.
+        $searchbox_example_copy = 'Display a search box so users can search opportunities using the <b>search box</b> shortcode. The search box shortcode has <em>5 optional parameters</em>.
 <ol>
-    <li><strong>advanced</strong>. Display advanced search options</li>
+    <li><strong>advanced</strong>. Display an Advanced search button & advanced search options. <em>Possible values: yes|no.</em></li>
+    <li><strong>collapse</strong>. If advanced search is activated, this paramter indicates whether to show or collapse the advanced search layout by default. If hidden, clicking "Advanced" will reveal the layout, and vice versa. <em>Values: yes|no.</em></li>
     <li><strong>prefix</strong>. Put text here that you would like to include in all of the searches done with this search box.</li>
     <li><strong>hide</strong>. In the advanced search layout, select which default checkbox categories to hide</li>
     <li><strong>category</strong>. In the advanced search layout, create a category of checkboxes. The first item in this will be the name of the category, &amp; the rest will be the checkbox options.</li>
     </ol>
-    In this example advanced search options will be displayed, every search will be prefixed with the words "foster care", the Issues &amp; Groups categories will not be displayed, &amp; an Engagements category will be displayed with the Prevent, Support, Foster, Sustain, &amp; Remain as options.
+    In this example advanced search options will be displayed & collapsed by default, every search will be prefixed with the words "foster care", the Issues &amp; Groups categories will not be displayed, &amp; an Engagements category will be displayed with the Prevent, Support, Foster, Sustain, &amp; Remain as options.
 
-    [restore-strategies-search-box advanced="yes" prefix="foster care" hide="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]
+    [restore-strategies-search-box advanced="yes" collapse="yes" prefix="foster care" hide="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]
 
     In this example advanced search options will not be displayed &amp; searches will not be prefixed with anything.
 

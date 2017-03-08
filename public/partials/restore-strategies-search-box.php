@@ -16,7 +16,7 @@
 
         <?php if ($advanced): ?>
 
-            <div class="restore-strategies-search-categories">
+            <div class="restore-strategies-search-categories <?php if ($collapse) { echo 'rs-collapse'; } ?>">
 
                 <?php if (!empty($category_title) || !empty($category)): ?>
                     <div class="search-category">
