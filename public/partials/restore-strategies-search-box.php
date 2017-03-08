@@ -1,5 +1,5 @@
-<section class="restore-strategies-search-box">
-    <form method="get" action="<?php $_SERVER['REQUEST_URI'] ?>">
+<section class="restore-strategies-search-box" id="restore-strategies-search-box">
+    <form method="get" action="<?php $_SERVER['REQUEST_URI'] ?>#restore-strategies-search-box">
         <input
             type="search"
             name="q"
