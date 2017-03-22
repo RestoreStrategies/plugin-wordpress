@@ -29,9 +29,10 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-    $(function () {
+    $.noConflict();
+    jQuery(function ($) {
 
-        if($("input[type=checkbox]:checked").length == 0) {
+        if($(".search-category input[type=checkbox]:checked").length == 0) {
             $('.restore-strategies-search-categories.rs-collapse').addClass('rs-hide');
         }
 
@@ -42,7 +43,7 @@
             $(this).parent().parent().children('.restore-strategies-opp-fader').toggle();
         });
 
-       $('#advanced-search').click(function(event) {
+       $('.rs-search-buttons #advanced-search').click(function(event) {
 
            $('.restore-strategies-search-categories').slideToggle();
        }); 
