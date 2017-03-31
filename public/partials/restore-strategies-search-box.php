@@ -7,7 +7,7 @@
             value="<?php echo (!empty($_GET['q']) ? $_GET['q'] : '') ?>"
         />
 
-        <div class="rs-search-buttons">
+        <div class="restore-strategies-search-buttons">
             <button type="submit">Search</button>
             <?php if ($advanced): ?>
                 <button id="advanced-search"type="button">Advanced</button>
@@ -16,10 +16,10 @@
 
         <?php if ($advanced): ?>
 
-            <div class="restore-strategies-search-categories <?php if ($collapse) { echo 'rs-collapse'; } ?>">
+            <div class="restore-strategies-search-categories <?php if ($collapse) { echo 'restore-strategies-collapse'; } ?>">
 
                 <?php if (!empty($category_title) || !empty($category)): ?>
-                    <div class="search-category">
+                    <div class="restore-strategies-search-category">
                         <h6><?php echo $category_title; ?></h6>
                         <ul>
                             <?php foreach ($category as $item): ?>
@@ -46,7 +46,7 @@
                 <?php endif; ?>
 
                 <?php if (!in_array('Issues', $exclude)): ?>
-                    <div class="search-category">
+                    <div class="restore-strategies-search-category">
                         <h6>Issues</h6>
                         <ul>
                             <?php foreach (self::issues() as $issue): ?>
@@ -73,7 +73,7 @@
                 <?php endif; ?>
 
                 <?php if (!in_array('Regions', $exclude)): ?>
-                    <div class="search-category">
+                    <div class="restore-strategies-search-category">
                         <h6>Regions</h6>
                         <ul>
                             <?php foreach (self::regions() as $region): ?>
@@ -100,7 +100,7 @@
                 <?php endif; ?>
 
                 <?php if (!in_array('Types', $exclude)): ?>               
-                    <div class="search-category">
+                    <div class="restore-strategies-search-category">
                         <h6>Types</h6>
                         <ul>
                             <?php foreach (self::types() as $type): ?>
@@ -127,7 +127,7 @@
                 <?php endif; ?>
 
                 <?php if (!in_array('Times', $exclude)): ?>
-                    <div class="search-category">
+                    <div class="restore-strategies-search-category">
                         <h6>Times</h6>
                         <ul>
                             <?php foreach (self::times() as $time): ?>
@@ -154,7 +154,7 @@
                 <?php endif; ?>
 
                 <?php if (!in_array('Groups', $exclude)): ?>
-                    <div class="search-category">
+                    <div class="restore-strategies-search-category">
                         <h6>Groups</h6>
                         <ul>
                             <?php foreach (self::group_types() as $group_type): ?>
@@ -181,7 +181,7 @@
                 <?php endif; ?>
 
                 <?php if (!in_array('Days', $exclude)): ?>
-                    <div class="search-category">
+                    <div class="restore-strategies-search-category">
                         <h6>Days</h6>
                         <ul>
                             <?php foreach (self::days() as $day): ?>
@@ -210,5 +210,8 @@
             </div>
         <?php endif; ?>
     </form>
+
+    <div class="restore-strategies-search-results">
+        <?php echo self::search_results_html($prefix); ?>
+    </div>
 </section>
-<?php echo self::search_results_html($prefix); ?>

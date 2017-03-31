@@ -3,7 +3,7 @@
  * included in this file.
  */
 
-.rs-hide {
+.restore-strategies-hide {
         display: none;
 }
 
@@ -16,7 +16,7 @@ article.restore-strategies-opp {
         position: relative;
 }
 
-article.restore-strategies-opp.rs-opp-single {
+article.restore-strategies-opp.restore-strategies-opp-single {
         float: left;
         margin: auto;
         width: 75%;
@@ -105,13 +105,13 @@ section.restore-strategies-search-box ul input {
         width: auto;
 }
 
-div.rs-search-buttons {
+div.restore-strategies-search-buttons {
         display: block;
         float: left;
         width: 245px;
 }
 
-div.rs-search-buttons button {
+div.restore-strategies-search-buttons button {
         display: block;
         float: left;
         margin-left: 0.5em;
@@ -126,13 +126,18 @@ section.restore-strategies-search-box input {
         float: left;
 }
 
-section.restore-strategies-search-box div.search-category {
+section.restore-strategies-search-box div.restore-strategies-search-category {
         float: left;
         width: 33%;
 }
 
-div.search-category h6 {
+div.restore-strategies-search-category h6 {
         margin-bottom: 0.25em;
+}
+
+div.restore-strategies-search-results {
+        float: left;
+        width: 100%;
 }
 
 section.restore-strategies-signup {
