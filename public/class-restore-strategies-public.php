@@ -277,7 +277,7 @@ class Restore_Strategies_Public {
         return $html;
     }
 
-    private function opportunity_html($opp, $class = 'rs-opp-group') {
+    private function opportunity_html($opp, $class = 'restore-strategies-opp-group') {
 
         ob_start();
         include('partials/restore-strategies-opportunity.php');
@@ -318,12 +318,12 @@ class Restore_Strategies_Public {
     public function opportunity_shortcode($atts) {
         if (!empty($atts['id'])) {
             $opp = self::opportunity($atts['id']);
-            $class = 'rs-opp-group';
+            $class = 'restore-strategies-opp-group';
             return self::opportunity_html($opp, $class);
         }
         else if (!empty($_GET['opportunity_id'])) {
             $opp = self::opportunity($_GET['opportunity_id']);
-            $class='rs-opp-single';
+            $class='restore-strategies-opp-single';
             return self::opportunity_html($opp, $class);
         }
 

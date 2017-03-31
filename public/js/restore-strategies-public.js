@@ -33,7 +33,7 @@
     jQuery(function ($) {
 
         if($(".search-category input[type=checkbox]:checked").length == 0) {
-            $('.restore-strategies-search-categories.rs-collapse').addClass('rs-hide');
+            $('.restore-strategies-search-categories.restore-strategies-collapse').addClass('restore-strategies-hide');
         }
 
         $('article.restore-strategies-opp a.details-link').click(function (event) {
@@ -43,7 +43,7 @@
             $(this).parent().parent().children('.restore-strategies-opp-fader').toggle();
         });
 
-       $('.rs-search-buttons #advanced-search').click(function(event) {
+       $('.restore-strategies-search-buttons #advanced-search').click(function(event) {
 
            $('.restore-strategies-search-categories').slideToggle();
        }); 

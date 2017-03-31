@@ -2,10 +2,13 @@
  * Use this file to customize the styling of the search, signup, & opporutnities
  * of the Restore Strategies plugin.
  */
+.restore-strategies-hide {
+}
+
 article.restore-strategies-opp {
 }
 
-article.restore-strategies-opp.rs-opp-single {
+article.restore-strategies-opp.restore-strategies-opp-single {
 }
 
 article.restore-strategies-opp h3 {
@@ -35,6 +38,9 @@ article.restore-strategies-opp dt {
 article.restore-strategies-opp dt, article.restore-strategies-opp dd {
 }
 
+article.restore-strategies-opp div.links a {
+}
+
 section.restore-strategies-search-box {
 }
 
@@ -47,10 +53,10 @@ div.restore-strategies-search-categories {
 section.restore-strategies-search-box ul input {
 }
 
-div.rs-search-buttons {
+div.restore-strategies-search-buttons {
 }
 
-div.rs-search-buttons button {
+div.restore-strategies-search-buttons button {
 }
 
 section.restore-strategies-search-box input[type='search'] {
@@ -59,10 +65,13 @@ section.restore-strategies-search-box input[type='search'] {
 section.restore-strategies-search-box input {
 }
 
-section.restore-strategies-search-box div.search-category {
+section.restore-strategies-search-box div.restore-strategies-search-category {
 }
 
-div.search-category h6 {
+div.restore-strategies-search-category h6 {
+}
+
+div.restore-strategies-search-results {
 }
 
 section.restore-strategies-signup {

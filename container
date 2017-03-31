@@ -68,7 +68,7 @@ if [ "$1" = "-c" ]; then
     docker run -d -e MYSQL_ROOT_PASSWORD="default" --name="wordpress-mysql" mysql
     sleep 3
 	echo "Creating & starting $container_name container..."
-	docker run -d -v $PWD:/var/www/html/wp-content/plugins/restore-strategies \
+	docker run -d -e WP_DEBUG=true -v $PWD:/var/www/html/wp-content/plugins/restore-strategies \
     -p $external_port:$internal_port --name="$container_name" \
 	--link wordpress-mysql:mysql $image_name
 fi
