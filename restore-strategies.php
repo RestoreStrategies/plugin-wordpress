@@ -16,7 +16,7 @@
  * Plugin Name:       Restore Strategies
  * Plugin URI:        https://github.com/RestoreStrategies/plugin-wordpress
  * Description:       The WordPress plugin for the Restore Strategies API.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Restore Strategies
  * Author URI:        http://www.restorestrategies.org/
  * License:           MIT
