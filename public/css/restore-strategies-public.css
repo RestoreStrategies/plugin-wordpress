@@ -22,6 +22,10 @@ article.restore-strategies-opp.restore-strategies-opp-single {
         width: 75%;
 }
 
+body.restore_strategies-template-default article.restore-strategies-opp.restore-strategies-opp-single {
+        margin: 1em 10%;
+}
+
 article.restore-strategies-opp h3 {
         margin: 0.25em 0;
 }
@@ -142,12 +146,19 @@ div.restore-strategies-search-results {
 
 section.restore-strategies-signup {
         float: left;
+        clear: both;
+        margin-bottom: 1em;
+        padding: 0 10%;
 }
 
 section.restore-strategies-signup .error {
         color: red;
         font-weight: bolder;
         list-style-position: inside;
+}
+
+body.restore_strategies-template-default footer {
+        clear: both;
 }
 
 section.restore-strategies-signup input[type="text"],
@@ -162,6 +173,11 @@ section.restore-strategies-signup span {
 section.restore-strategies-signup textarea {
         width: 95%;
         margin-bottom: 1em;
+}
+
+section.restore-strategies-signup button {
+        clear: both;
+        display: block;
 }
 
 @media screen and (max-width: 920px) {

@@ -11,6 +11,9 @@ article.restore-strategies-opp {
 article.restore-strategies-opp.restore-strategies-opp-single {
 }
 
+body.restore_strategies-template-default article.restore-strategies-opp.restore-strategies-opp-single {
+}
+
 article.restore-strategies-opp h3 {
 }
 
@@ -80,6 +83,9 @@ section.restore-strategies-signup {
 section.restore-strategies-signup .error {
 }
 
+body.restore_strategies-template-default footer {
+}
+
 section.restore-strategies-signup input[type="text"],
 section.restore-strategies-signup input[type="email"],
 section.restore-strategies-signup input[type="tel"],
@@ -87,6 +93,9 @@ section.restore-strategies-signup span {
 }
 
 section.restore-strategies-signup textarea {
+}
+
+section.restore-strategies-signup button {
 }
 
 @media screen and (max-width: 920px) {
