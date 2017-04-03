@@ -142,6 +142,7 @@ div.restore-strategies-search-category h6 {
 div.restore-strategies-search-results {
         float: left;
         width: 100%;
+        margin-top: 1em;
 }
 
 section.restore-strategies-signup {
