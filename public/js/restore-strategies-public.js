@@ -29,8 +29,7 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-    $.noConflict();
-    jQuery(function ($) {
+    $(function () {
 
         if($(".search-category input[type=checkbox]:checked").length == 0) {
             $('.restore-strategies-search-categories.restore-strategies-collapse').addClass('restore-strategies-hide');
