@@ -69,7 +69,7 @@ class Restore_Strategies {
 	public function __construct() {
 
 		$this->plugin_name = 'restore-strategies';
-		$this->version = '1.0.0';
+		$this->version = '1.0.2';
 
 		$this->load_dependencies();
 		$this->set_locale();
