@@ -31,7 +31,7 @@
 
     $(function () {
 
-        if($(".search-category input[type=checkbox]:checked").length == 0) {
+        if($(".restore-strategies-search-categories input[type=checkbox]:checked").length == 0) {
             $('.restore-strategies-search-categories.restore-strategies-collapse').addClass('restore-strategies-hide');
         }
 
