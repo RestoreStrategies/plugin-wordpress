@@ -72,7 +72,10 @@ class Restore_Strategies_Public {
 
         $this->client = new RestoreStrategiesClient(
             $options['token'],
-            $options['secret']
+            $options['secret'],
+            null,
+            null,
+            'Restore Strategies WordPress plugin'
         );
 	}
 
