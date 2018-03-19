@@ -69,6 +69,15 @@ class Restore_Strategies_Activator {
 
     [restore-strategies-search-box]';
 
+    $featured_example_copy = '<b>Display featured opportunities</b>. You may feature any number of opportunities via your <a href="https://www.citysync.church/admin/featured-opps" target="_blank">City Sync admin</a>.
+
+    [restore-strategies-featured-opportunities]';
+
+
+        /**
+         * Search for restore_strategies post types, publish if exist,
+         * if not create
+         */
         $posts = query_posts(array(
             'post_type' => 'restore_strategies'
         ));
@@ -119,6 +128,17 @@ class Restore_Strategies_Activator {
 
         wp_insert_post(
             array(
+                'post_title' => '[Restore Strategies Example] Featured Opportunities',
+                'post_content' => $featured_example_copy,
+                'comment_status' => 'closed',
+                'post_type' => 'page',
+                'post_status' => 'draft',
+            ),
+            true
+        );
+
+        wp_insert_post(
+            array(
                 'post_title' => '[Restore Strategies Example] Search',
                 'post_content' => $search_example_copy,
                 'comment_status' => 'closed',
@@ -139,5 +159,4 @@ class Restore_Strategies_Activator {
             true
         );
 	}
-
 }

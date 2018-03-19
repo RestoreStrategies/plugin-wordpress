@@ -39,6 +39,7 @@ class Restore_Strategies_Deactivator {
             query_posts(['s' => '[Restore Strategies Example] Opportunity']),
             query_posts(['s' => '[Restore Strategies Example] Search']),
             query_posts(['s' => '[Restore Strategies Example] Search Box']),
+            query_posts(['s' => '[Restore Strategies Example] Featured Opportunities']),
             $posts
         );
 

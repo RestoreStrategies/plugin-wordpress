@@ -333,6 +333,25 @@ class Restore_Strategies_Public {
         return '<p class="error">valid id not given</p>';
     }
 
+
+    public function featured_opportunities_shortcode() {
+        $response = $this->client->featuredOpportunities();
+
+        $items = $response->items();
+
+        $html = '';
+
+        if (count($items) == 0) {
+            return '<p>no opportunities featured</p>';
+        }
+
+        for ($i = 0; $i < count($items); $i++) {
+            $html .= self::opportunity_html($items[$i]);
+        }
+
+        return $html;
+    }
+
     public function search_shortcode($atts) {
         return self::search($atts, null);
     }

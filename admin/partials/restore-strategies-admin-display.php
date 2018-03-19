@@ -20,7 +20,7 @@
 
     <p>To setup the Restore Strategies plugin, provide your API credentials. Then, feel free to use Restore Strategies’ shortcodes throughout your site.</p>
 
-    <p>Three shortcodes are available. For details, look at them <a id="rsa-reveal" href="#">here</a> or <b><a href="<?php echo get_site_url(); ?>/wp-admin/edit.php?s=%5BRestore+Strategies+Example%5D&post_status=all&post_type=page">check out your pages for some examples</a></b>.</p>
+    <p>Four shortcodes are available. For details, look at them <a id="rsa-reveal" href="#">here</a> or <b><a href="<?php echo get_site_url(); ?>/wp-admin/edit.php?s=%5BRestore+Strategies+Example%5D&post_status=all&post_type=page">check out your pages for some examples</a></b>.</p>
 
     <p><strong>Note: This plugin may not work correctly if your site's permalinks are set to <em>Plain</em>. Additionally the [restore-strategies-search-box] shortcode may not work as expected in post preview. You can check your permalinks settings <a href="<?php echo get_site_url(); ?>/wp-admin/options-permalink.php">here</a>.</strong></p>
 
@@ -30,6 +30,11 @@
         <p>This shortcode displays a single opportunity based on it’s id. For example,<br /><br />
         <kbd>[restore-strategies-opportunity id="511"]</kbd></p>
        
+        <h2>[restore-strategies-featured-opportunities]</h2>
+
+        <p>This shortcode displays opportunities that you've featured. You may feature any number of opportunities via your <a href="https://www.citysync.church/admin/featured-opps" target="_blank">City Sync admin</a>. This shortcode takes no parameters.</p>
+        <kbd>[restore-strategies-featured-opportunities]</kbd>
+
         <h2>[restore-strategies-search-box]</h2>
         
         <p>This shortcode creates a search box. The search box can be simple, with just a text input field, or advanced with several categories of check boxes. You can choose to collapse or reveal the advanced search layout by default. If you would like every search to be prefixed with a certain term, you can provide that. In advanced search, you can hide checkbox categories if you'd like. You can also create your own category. For example,<br /><br />
