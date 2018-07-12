@@ -107,12 +107,12 @@
                                 <li>
                                     <input
                                         type="checkbox"
-                                        name="types[]"
+                                        name="type[]"
                                         id="<?php echo $type ?>"
                                         value="<?php echo $type ?>"
                                         <?php
-                                            $bool = !is_null($_GET['types']) &&
-                                                    in_array($type, $_GET['types']);
+                                            $bool = !is_null($_GET['type']) &&
+                                                    in_array($type, $_GET['type']);
 
                                             if ($bool) {
                                                 echo 'checked';
