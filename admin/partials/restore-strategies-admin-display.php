@@ -20,7 +20,7 @@
 
     <p>To setup the Restore Strategies plugin, provide your API credentials. Then, feel free to use Restore Strategies’ shortcodes throughout your site.</p>
 
-    <p>Four shortcodes are available. For details, look at them <a id="rsa-reveal" href="#">here</a> or <b><a href="<?php echo get_site_url(); ?>/wp-admin/edit.php?s=%5BRestore+Strategies+Example%5D&post_status=all&post_type=page">check out your pages for some examples</a></b>.</p>
+    <p>Four shortcodes are available. For details, look at them <b><a id="rsa-reveal" href="#">here</a></b> or <b><a href="<?php echo get_site_url(); ?>/wp-admin/edit.php?s=%5BRestore+Strategies+Example%5D&post_status=all&post_type=page">check out your pages for some examples</a></b>.</p>
 
     <p><strong>Note: This plugin may not work correctly if your site's permalinks are set to <em>Plain</em>. Additionally the [restore-strategies-search-box] shortcode may not work as expected in post preview. You can check your permalinks settings <a href="<?php echo get_site_url(); ?>/wp-admin/options-permalink.php">here</a>.</strong></p>
 
@@ -35,11 +35,6 @@
         <p>This shortcode displays opportunities that you've featured. You may feature any number of opportunities via your <a href="https://www.citysync.church/admin/featured-opps" target="_blank">City Sync admin</a>. This shortcode takes no parameters.</p>
         <kbd>[restore-strategies-featured-opportunities]</kbd>
 
-        <h2>[restore-strategies-search-box]</h2>
-        
-        <p>This shortcode creates a search box. The search box can be simple, with just a text input field, or advanced with several categories of check boxes. You can choose to collapse or reveal the advanced search layout by default. If you would like every search to be prefixed with a certain term, you can provide that. In advanced search, you can hide checkbox categories if you'd like. You can also create your own category. For example,<br /><br />
-        <kbd>[restore-strategies-search-box advanced="yes" collapse="yes" prefix="foster care" hide="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]</kbd></p>
-        
         <h2>[restore-strategies-search]</h2>
         
         <p>This shortcode does a search & returns the results. It's the fastest way to list several opportunities on a page if they can all be found from a single search. It's possible to do an advanced search with several different parameters. The possible parameters are listed below:</p>
@@ -49,6 +44,33 @@
         <p>For example:</p>
         
         <kbd>[restore-strategies-search q="foster care" issues="Children/Youth,Sports" regions="North,Central" times="Morning,Evening" days="Monday,Thursday,Sunday" type="Service,Training" group_type="Individual,Group"]</kbd>
+
+        <h2>[restore-strategies-slider]</h2>
+
+        <p>This shortcode creates a slider of opportunities, it wraps any list of opportunities created by the <kbd>[restore-strategies-opportunity]</kbd>, <kbd>[restore-strategies-featured-opportunities]</kbd>, & <kbd>[restore-strategies-search]</kbd> shortcodes.</p>
+
+        <p>For example:</p>
+
+        <kbd>
+        [restore-strategies-slider]<br >
+        &nbsp;&nbsp;[restore-strategies-search q="foster care"]<br >
+        &nbsp;[/restore-strategies-slider]
+        </kbd>
+
+        <p>It's possible to adjust the width & speed (in milliseconds) of the slider and whether or not to auto play it.</p>
+
+        <p>For example:</p>
+
+        <kbd>
+        [restore-strategies-slider width="100%" auto="yes" speed="3000"]<br >
+        &nbsp;&nbsp;[restore-strategies-featured-opportunities]<br >
+        &nbsp;[/restore-strategies-slider]
+        </kbd>
+
+        <h2>[restore-strategies-search-box]</h2>
+        
+        <p>This shortcode creates a search box. The search box can be simple, with just a text input field, or advanced with several categories of check boxes. You can choose to collapse or reveal the advanced search layout by default. If you would like every search to be prefixed with a certain term, you can provide that. In advanced search, you can hide checkbox categories if you'd like. You can also create your own category. For example,<br /><br />
+        <kbd>[restore-strategies-search-box advanced="yes" collapse="yes" prefix="foster care" hide="Issues,Groups" category="Engagements,Prevent,Support,Foster,Sustain,Remain"]</kbd></p>
     </div>
 
     <form method="post" action="options.php">

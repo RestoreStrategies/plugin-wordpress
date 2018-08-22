@@ -98,6 +98,7 @@ class Restore_Strategies_Public {
 		 * class.
 		 */
 
+		wp_enqueue_style( 'slick', plugin_dir_url( __FILE__ ) . 'css/slick.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/restore-strategies-public.css', array(), $this->version, 'all' );
 		wp_enqueue_style( 'restore-strategies-customize', plugin_dir_url( __FILE__ ) . '../customize.css', array(), $this->version, 'all' );
 	}
@@ -121,8 +122,8 @@ class Restore_Strategies_Public {
 		 * class.
 		 */
 
+		wp_enqueue_script( 'slick', plugin_dir_url( __FILE__ ) . 'js/slick.min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/restore-strategies-public.js', array( 'jquery' ), $this->version, false );
-
 	}
 
     public function restore_strategies_template($single_template) {
@@ -391,6 +392,40 @@ class Restore_Strategies_Public {
 
         ob_start();
         include('partials/restore-strategies-search-box.php');
+        return ob_get_clean();
+    }
+
+    public function slider_shortcode($atts, $content = null) {
+        $width = '100%';
+        $auto = 'true';
+        $speed = 3000;
+
+        if (!empty($atts['width'])) {
+            $width = $atts['width'];
+        }
+
+        if (!empty($atts['auto']) && strtolower($atts['auto']) == 'no') {
+            $auto = 'false';
+        }
+
+        if (!empty($atts['speed'])) {
+            $speed = $atts['speed'];
+        }
+
+        $ele_id = 'restore-strategies-slider-' . rand(0, 99999999);
+
+        // Strip HTML elements
+        $replace_elements = array(
+            // '/<\w+(\s+([\w=\'";:-]*))*>\s*\S*<\/\w+>/', // element with content
+            '/<\w+(\s+([\w=\'";:-]*))*>/', // opening element
+            '/<\/\w+>/', // closing element
+            '/<\w+\s*\/>/', // self-closing element
+        );
+        $content = preg_replace($replace_elements,'', $content);
+
+        $slider_content = do_shortcode(shortcode_unautop($content), true);
+        ob_start();
+        include('partials/restore-strategies-slider.php');
         return ob_get_clean();
     }
 

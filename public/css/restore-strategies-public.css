@@ -183,6 +183,27 @@ section.restore-strategies-signup button {
         display: block;
 }
 
+section.restore-strategies-slider-container {
+        float: left;
+        margin-bottom: 1em;
+        margin-top: 1em;
+}
+
+section.restore-strategies-slider-container .arrows button.slick-prev {
+        float: left;
+}
+
+section.restore-strategies-slider-container .arrows button.slick-next {
+        float: right;
+}
+
+section.restore-strategies-slider-container section.restore-strategies-slider article.restore-strategies-opp {
+        margin-right: 0;
+}
+section.restore-strategies-slider-container section.restore-strategies-slider article div.links a.details-link {
+        display: none;
+}
+
 @media screen and (max-width: 920px) {
         article.restore-strategies-opp {
                 width: 100%;

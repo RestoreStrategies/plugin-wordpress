@@ -73,6 +73,27 @@ class Restore_Strategies_Activator {
 
     [restore-strategies-featured-opportunities]';
 
+$slider_example_copy =  '<b>Create a slider in which a collection of opportunities is displayed</b>. You can use any of the [[restore-strategies-opportunity]], [[restore-strategies-featured-opportunities]], &amp; [[restore-strategies-search]] shortcodes with the slider.
+
+<em>Here is an example slider of your featured opportunities.</em>
+
+[restore-strategies-slider]
+[restore-strategies-featured-opportunities]
+[/restore-strategies-slider]
+
+The slider shortcode has <em>three optional parameters</em>.
+<ol>
+ 	<li><strong>width</strong>. The width of the slider. <em>Defaults to 100%</em>.</li>
+ 	<li><strong>auto</strong>. Whether or not the slider should auto play. <em>Defaults to 'yes'. Possible values: yes|no.</em></li>
+ 	<li><strong>speed</strong>. Speed of the slider (in milliseconds). <em>Default is 3000.</em></li>
+</ol>
+<em>Here is an example of a slider that's 75% of the width of the element it's in, it does slide automatically, it slides every 3000 milliseconds.</em>
+
+[restore-strategies-slider width="75%"  auto="yes" speed="3000"]
+[restore-strategies-opportunity id="511"]
+[restore-strategies-opportunity id="512"]
+[/restore-strategies-slider]';
+
 
         /**
          * Search for restore_strategies post types, publish if exist,
@@ -152,6 +173,17 @@ class Restore_Strategies_Activator {
             array(
                 'post_title' => '[Restore Strategies Example] Search Box',
                 'post_content' => $searchbox_example_copy,
+                'comment_status' => 'closed',
+                'post_type' => 'page',
+                'post_status' => 'draft',
+            ),
+            true
+        );
+
+        wp_insert_post(
+            array(
+                'post_title' => '[Restore Strategies Example] Slider',
+                'post_content' => $slider_example_copy,
                 'comment_status' => 'closed',
                 'post_type' => 'page',
                 'post_status' => 'draft',
