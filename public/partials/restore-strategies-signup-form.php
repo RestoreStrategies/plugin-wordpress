@@ -82,7 +82,8 @@
         </span>
 
         <input
-            type="text"
+            type="number"
+            min=1
             placeholder="e.g. 3"
             name="numOfItemsCommitted"
             required

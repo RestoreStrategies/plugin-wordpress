@@ -167,6 +167,7 @@ body.restore_strategies-template-default footer {
 section.restore-strategies-signup input[type="text"],
 section.restore-strategies-signup input[type="email"],
 section.restore-strategies-signup input[type="tel"],
+section.restore-strategies-signup input[type="number"],
 section.restore-strategies-signup span {
         width: 45%;
         float: left;
